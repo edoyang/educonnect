@@ -1,0 +1,392 @@
+/* ===== Tablet (max-width: 968px) ===== */
+@media (max-width: 968px) {
+  .container {
+    padding: 30px 40px;
+  }
+
+  .content-wrapper {
+    padding: 0 40px;
+  }
+
+  /* Nav */
+  .nav-links {
+    display: none;
+  }
+
+  /* Hero */
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .blue-shape {
+    display: none;
+  }
+
+  .books-container {
+    height: 360px;
+  }
+
+  /* Sections */
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .features-grid,
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .service-row,
+  .service-row.reverse {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    padding: 40px;
+  }
+
+  /* Auth pages */
+  .auth-card {
+    margin: 20px;
+    padding: 32px 28px;
+  }
+
+  /* New pages hero */
+  .page-hero-wrapper .container {
+    padding: 30px 40px 0;
+  }
+
+  .page-title {
+    font-size: 32px;
+  }
+
+  /* About */
+  .mission-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* Resources */
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-bar {
+    max-width: 100%;
+  }
+
+  /* Collaboration */
+  .collab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .groups-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .cta-box {
+    padding: 40px 28px;
+  }
+
+  /* Events */
+  .calendar-grid {
+    gap: 2px;
+  }
+
+  .cal-day {
+    padding: 12px 4px;
+    font-size: 14px;
+  }
+
+  /* Contact */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ===== Mobile (max-width: 600px) ===== */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 20px;
+  }
+
+  .content-wrapper {
+    padding: 0 20px;
+  }
+
+  /* Nav */
+  nav {
+    margin-bottom: 40px;
+  }
+
+  .logo span {
+    font-size: 17px;
+  }
+
+  .login-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: auto;
+    gap: 32px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .start-btn {
+    padding: 14px 28px;
+    font-size: 14px;
+  }
+
+  .books-container {
+    height: 260px;
+    gap: 0.5rem;
+  }
+
+  /* Sections */
+  .section-label {
+    font-size: 12px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+
+  .feature-card {
+    padding: 12px;
+  }
+
+  .service-image img {
+    height: 200px;
+  }
+
+  .service-text h3 {
+    font-size: 22px;
+  }
+
+  .review-card {
+    padding: 28px 20px;
+  }
+
+  .footer-content {
+    padding: 32px 20px;
+    gap: 28px;
+  }
+
+  .footer-bar {
+    border-radius: 12px 12px 0 0;
+  }
+
+  /* Auth */
+  .auth-card {
+    margin: 12px;
+    padding: 28px 20px;
+  }
+
+  .auth-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* New pages hero */
+  .page-hero-wrapper .container {
+    padding: 20px 20px 0;
+  }
+
+  .page-hero-wrapper nav {
+    margin-bottom: 32px;
+  }
+
+  .page-title {
+    font-size: 26px;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+  }
+
+  /* About */
+  .mission-card,
+  .team-card {
+    padding: 28px 20px;
+  }
+
+  .story-text p {
+    font-size: 14px;
+  }
+
+  .about-mission,
+  .about-story,
+  .about-team {
+    padding: 48px 0;
+  }
+
+  /* Resources */
+  .resource-search {
+    padding: 40px 0 24px;
+  }
+
+  .search-bar {
+    padding: 12px 16px;
+  }
+
+  .filter-tags {
+    gap: 8px;
+  }
+
+  .filter-tag {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  .resource-card {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .resource-list {
+    padding: 16px 0 48px;
+  }
+
+  /* Collaboration */
+  .collab-features {
+    padding: 48px 0;
+  }
+
+  .collab-card {
+    padding: 28px 20px;
+  }
+
+  .study-groups {
+    padding: 24px 0 48px;
+  }
+
+  .group-header {
+    padding: 20px 16px 12px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .group-desc {
+    padding: 0 16px 16px;
+  }
+
+  .group-footer {
+    padding: 12px 16px 20px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .join-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .create-group-cta {
+    padding: 0 0 48px;
+  }
+
+  .cta-box {
+    padding: 32px 20px;
+    border-radius: 16px;
+  }
+
+  .cta-box h2 {
+    font-size: 22px;
+  }
+
+  /* Events */
+  .events-calendar {
+    padding: 40px 0 24px;
+  }
+
+  .calendar-header h2 {
+    font-size: 20px;
+  }
+
+  .cal-day-header {
+    font-size: 11px;
+    padding: 8px 0;
+  }
+
+  .cal-day {
+    padding: 10px 2px;
+    font-size: 13px;
+  }
+
+  .event-dot {
+    width: 5px;
+    height: 5px;
+    margin-top: 2px;
+  }
+
+  .upcoming-events {
+    padding: 40px 0 48px;
+  }
+
+  .event-card {
+    padding: 20px;
+    gap: 16px;
+    flex-direction: column;
+  }
+
+  .event-date-box {
+    min-width: auto;
+    width: 100%;
+    height: 56px;
+    flex-direction: row;
+    gap: 8px;
+    border-radius: 10px;
+  }
+
+  .event-meta {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* Contact */
+  .contact-section {
+    padding: 48px 0;
+  }
+
+  .contact-form-wrapper h2,
+  .contact-info-wrapper h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .contact-info-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+
+  /* Map */
+  .map-container iframe {
+    height: 220px;
+  }
+}

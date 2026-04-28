@@ -1,0 +1,170 @@
+{
+  "campus": {
+    "name": "Wynyard Green",
+    "address": "Levels, 7-11/11 York St, Sydney NSW 2000",
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.7!2d151.2055!3d-33.8662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae41516fc74d%3A0x817dd0539e72d8f9!2sWynyard%20Green!5e0!3m2!1sen!2sau!4v1700000000000",
+    "phone": "+61 2 1234 5678",
+    "email": "support@educonnect.edu.au",
+    "hours": "Mon - Fri: 9:00 AM - 5:00 PM"
+  },
+  "events": [
+    {
+      "date": "2024-04-05",
+      "dot": "blue-dot",
+      "title": "ICT203 Assignment Due",
+      "description": "Submit your HCI group project wireframes and prototype via the student portal by 11:59 PM.",
+      "time": "Due: 11:59 PM",
+      "category": "Assessment"
+    },
+    {
+      "date": "2024-04-10",
+      "dot": "green-dot",
+      "title": "Study Group Meetup",
+      "description": "HCI study group session at the campus library, Room 204. Bring your laptops and notes.",
+      "time": "2:00 PM - 4:00 PM",
+      "category": "Library Room 204"
+    },
+    {
+      "date": "2024-04-15",
+      "dot": "orange-dot",
+      "title": "Mid-Semester Exam: Database Systems",
+      "description": "Covers topics from Week 1-6 including SQL, normalization, and ER diagrams. Open book exam.",
+      "time": "10:00 AM - 12:00 PM",
+      "category": "Exam Hall B"
+    },
+    {
+      "date": "2024-04-19",
+      "dot": "blue-dot",
+      "title": "Campus Tech Fair",
+      "description": "Annual technology showcase featuring student projects, industry speakers, and networking opportunities.",
+      "time": "9:00 AM - 5:00 PM",
+      "category": "Main Hall"
+    },
+    {
+      "date": "2024-04-23",
+      "dot": "green-dot",
+      "title": "Web Dev Workshop",
+      "description": "Hands-on workshop on responsive design and modern CSS techniques. Beginners welcome!",
+      "time": "3:00 PM - 5:00 PM",
+      "category": "Computer Lab 3"
+    },
+    {
+      "date": "2024-04-29",
+      "dot": "orange-dot",
+      "title": "Group Project Presentation",
+      "description": "Final presentation for ICT203 group project. Each team has 15 minutes to present their prototype.",
+      "time": "1:00 PM - 4:00 PM",
+      "category": "Lecture Theatre 1"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Introduction to Computer Science",
+      "description": "Comprehensive lecture notes covering algorithms, data structures, and programming fundamentals.",
+      "type": "Lecture Notes",
+      "date": "Updated: Mar 2024",
+      "iconColor": "blue-bg"
+    },
+    {
+      "title": "Human-Computer Interaction",
+      "description": "Study guide with key HCI principles, usability heuristics, and interface design patterns.",
+      "type": "Study Guide",
+      "date": "Updated: Apr 2024",
+      "iconColor": "green-bg"
+    },
+    {
+      "title": "Database Systems - Past Exams",
+      "description": "Collection of past exam papers from 2020-2024 with model answers and marking criteria.",
+      "type": "Past Papers",
+      "date": "Updated: Feb 2024",
+      "iconColor": "orange-bg"
+    },
+    {
+      "title": "Web Development Fundamentals",
+      "description": "Complete textbook covering HTML, CSS, JavaScript, and modern web frameworks.",
+      "type": "Textbook",
+      "date": "Updated: Jan 2024",
+      "iconColor": "blue-bg"
+    },
+    {
+      "title": "Statistics & Data Analysis",
+      "description": "Lecture notes on probability, hypothesis testing, regression analysis, and data visualization.",
+      "type": "Lecture Notes",
+      "date": "Updated: Mar 2024",
+      "iconColor": "green-bg"
+    },
+    {
+      "title": "Software Engineering Principles",
+      "description": "Past exam papers covering SDLC, Agile methodology, testing strategies, and project management.",
+      "type": "Past Papers",
+      "date": "Updated: Apr 2024",
+      "iconColor": "orange-bg"
+    }
+  ],
+  "studyGroups": [
+    {
+      "name": "ICT203 - HCI Study Group",
+      "description": "Weekly study sessions covering usability principles, interface design, and assignment help.",
+      "members": 5,
+      "accent": "blue-accent",
+      "avatars": ["AS", "MA", "WA"]
+    },
+    {
+      "name": "Web Development Team",
+      "description": "Collaborative group for web dev projects. Share code, debug together, and review each other's work.",
+      "members": 3,
+      "accent": "green-accent",
+      "avatars": ["JD", "SK", "LM"]
+    },
+    {
+      "name": "Database Systems Prep",
+      "description": "Exam preparation group focusing on SQL, normalization, and ER diagrams. Past papers reviewed weekly.",
+      "members": 7,
+      "accent": "orange-accent",
+      "avatars": ["RT", "NP", "AK"]
+    }
+  ],
+  "testimonials": [
+    {
+      "initials": "AS",
+      "name": "Ahmad Saugi",
+      "role": "College Student",
+      "text": "EduConnect made finding study materials so much easier. Everything is organized and accessible in one place!",
+      "color": "gray"
+    },
+    {
+      "initials": "MA",
+      "name": "Muhammad Alfian",
+      "role": "University Student",
+      "text": "The collaboration hub is a game-changer. Forming study groups and sharing files has never been this seamless!",
+      "color": "blue"
+    },
+    {
+      "initials": "WA",
+      "name": "Wahyu Amirulloh",
+      "role": "IT Student",
+      "text": "I love the events timetable feature. It keeps me on track with all my deadlines and campus activities!",
+      "color": "yellow"
+    }
+  ],
+  "team": [
+    {
+      "initials": "AS",
+      "name": "Ahmad Saugi",
+      "role": "Frontend Developer",
+      "color": "blue"
+    },
+    {
+      "initials": "MA",
+      "name": "Muhammad Alfian",
+      "role": "UI/UX Designer",
+      "color": "purple"
+    },
+    {
+      "initials": "WA",
+      "name": "Wahyu Amirulloh",
+      "role": "Project Manager",
+      "color": "green"
+    }
+  ]
+}

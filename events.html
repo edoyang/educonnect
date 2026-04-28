@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduConnect - Events</title>
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/nav.css" />
+    <link rel="stylesheet" href="styles/pages.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+  </head>
+  <body>
+    <div class="page-hero-wrapper">
+      <div class="container">
+        <nav>
+          <div class="logo">
+            <img src="assets/logo.png" alt="EduConnect Logo" class="logo-img" />
+            <span>EduConnect</span>
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="collaboration.html">Collaborate</a></li>
+              <li><a href="events.html" class="active">Events</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <a href="login.html"><button class="login-btn">Login</button></a>
+        </nav>
+
+        <section class="page-header">
+          <p class="section-label">EVENTS</p>
+          <h1 class="page-title">Stay on top of your <span class="highlight">schedule</span></h1>
+          <p class="page-subtitle">Never miss a deadline, exam, or campus event. View everything in one organized calendar.</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="content-wrapper">
+      <section class="events-calendar">
+        <div class="calendar-header">
+          <h2 id="calendar-title">April 2024</h2>
+          <div class="calendar-nav">
+            <button class="cal-nav-btn" id="prev-month">&larr;</button>
+            <button class="cal-nav-btn" id="next-month">&rarr;</button>
+          </div>
+        </div>
+
+        <div class="calendar-grid" id="calendar-grid">
+          <div class="cal-day-header">Sun</div>
+          <div class="cal-day-header">Mon</div>
+          <div class="cal-day-header">Tue</div>
+          <div class="cal-day-header">Wed</div>
+          <div class="cal-day-header">Thu</div>
+          <div class="cal-day-header">Fri</div>
+          <div class="cal-day-header">Sat</div>
+        </div>
+      </section>
+
+      <section class="upcoming-events">
+        <p class="section-label">UPCOMING</p>
+        <h2 class="section-title">Upcoming Events</h2>
+
+        <div class="events-list" id="events-list"></div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>Managed By</h4>
+          <div class="footer-logo">
+            <img src="assets/logo.png" alt="EduConnect Logo" class="logo-img" />
+            <span>EduConnect</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Social Media</h4>
+          <div class="social-icons">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#0a1535"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#0a1535"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="#0a1535" stroke-width="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="#0a1535" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="#0a1535"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#0a1535"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Slogan</h4>
+          <p class="slogan">#LearnTogether</p>
+        </div>
+      </div>
+      <div class="footer-bar">
+        <p>&copy; 2024 EduConnect. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      let events = {};
+      let eventsData = [];
+
+      const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      let currentYear = 2024;
+      let currentMonth = 3; // April (0-indexed)
+
+      const calendarGrid = document.getElementById('calendar-grid');
+      const calendarTitle = document.getElementById('calendar-title');
+
+      function renderCalendar(year, month) {
+        // Remove old day cells (keep the 7 headers)
+        const headers = calendarGrid.querySelectorAll('.cal-day-header');
+        calendarGrid.innerHTML = '';
+        headers.forEach(h => calendarGrid.appendChild(h));
+
+        calendarTitle.textContent = monthNames[month] + ' ' + year;
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        const today = new Date();
+        const isCurrentMonth = today.getFullYear() === year && today.getMonth() === month;
+
+        // Empty cells before first day
+        for (let i = 0; i < firstDay; i++) {
+          const empty = document.createElement('div');
+          empty.className = 'cal-day empty';
+          calendarGrid.appendChild(empty);
+        }
+
+        // Day cells
+        for (let d = 1; d <= daysInMonth; d++) {
+          const cell = document.createElement('div');
+          const dateKey = year + '-' + String(month + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+
+          let classes = 'cal-day';
+          if (isCurrentMonth && d === today.getDate()) classes += ' today';
+          if (events[dateKey]) classes += ' has-event';
+          cell.className = classes;
+          cell.textContent = d;
+
+          if (events[dateKey]) {
+            const dot = document.createElement('span');
+            dot.className = 'event-dot ' + events[dateKey].dot;
+            cell.appendChild(dot);
+
+            cell.style.cursor = 'pointer';
+            cell.title = events[dateKey].title;
+            cell.addEventListener('click', () => {
+              // Scroll to the matching event card
+              const eventCards = document.querySelectorAll('.event-card');
+              for (const card of eventCards) {
+                const cardTitle = card.querySelector('.event-info h3').textContent;
+                if (cardTitle === events[dateKey].title) {
+                  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  card.style.boxShadow = '0 0 0 3px #4169e1';
+                  setTimeout(() => { card.style.boxShadow = ''; }, 2000);
+                  break;
+                }
+              }
+            });
+          }
+
+          calendarGrid.appendChild(cell);
+        }
+
+        // Fill remaining cells to complete the grid
+        const totalCells = firstDay + daysInMonth;
+        const remainder = totalCells % 7;
+        if (remainder > 0) {
+          for (let i = 0; i < 7 - remainder; i++) {
+            const empty = document.createElement('div');
+            empty.className = 'cal-day empty';
+            calendarGrid.appendChild(empty);
+          }
+        }
+      }
+
+      document.getElementById('prev-month').addEventListener('click', () => {
+        currentMonth--;
+        if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+        renderCalendar(currentYear, currentMonth);
+      });
+
+      document.getElementById('next-month').addEventListener('click', () => {
+        currentMonth++;
+        if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+        renderCalendar(currentYear, currentMonth);
+      });
+
+      // Load data from JSON
+      fetch('data.json')
+        .then(res => res.json())
+        .then(data => {
+          eventsData = data.events;
+          const monthNames2 = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+          const dotToBg = { 'blue-dot': 'blue-bg', 'green-dot': 'green-bg', 'orange-dot': 'orange-bg' };
+
+          // Build events lookup
+          eventsData.forEach(ev => {
+            events[ev.date] = { dot: ev.dot, title: ev.title };
+          });
+
+          // Render event cards
+          const list = document.getElementById('events-list');
+          eventsData.forEach(ev => {
+            const d = new Date(ev.date);
+            const day = d.getDate();
+            const mon = monthNames2[d.getMonth()];
+            const bgClass = dotToBg[ev.dot] || 'blue-bg';
+
+            list.innerHTML += `
+              <div class="event-card">
+                <div class="event-date-box ${bgClass}">
+                  <span class="event-day">${day}</span>
+                  <span class="event-month">${mon}</span>
+                </div>
+                <div class="event-info">
+                  <h3>${ev.title}</h3>
+                  <p>${ev.description}</p>
+                  <div class="event-meta">
+                    <span>Time: ${ev.time}</span>
+                    <span>Location: ${ev.category}</span>
+                  </div>
+                </div>
+              </div>`;
+          });
+
+          // Initial calendar render
+          renderCalendar(currentYear, currentMonth);
+        });
+    </script>
+  </body>
+</html>

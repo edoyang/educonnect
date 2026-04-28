@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"import docx\")",
+      "Bash(python3 -m pip install python-docx)",
+      "Bash(python -c \"import docx; doc = docx.Document\\(''d:/KOI/ICT203 - Human Computer Interaction/Group Project/Group Project.docx''\\); [print\\(p.text\\) for p in doc.paragraphs]\")"
+    ]
+  }
+}

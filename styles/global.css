@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.content-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.section-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #4169e1;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #0a1535;
+  margin-bottom: 60px;
+}
+
+.highlight {
+  color: #4169e1;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}

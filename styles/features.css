@@ -1,0 +1,42 @@
+.features {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 20px;
+}
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #5b7ff5, #4169e1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  box-shadow: 0 8px 24px rgba(65, 105, 225, 0.3);
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a1535;
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #6b7080;
+  line-height: 1.7;
+  max-width: 280px;
+  margin: 0 auto;
+}

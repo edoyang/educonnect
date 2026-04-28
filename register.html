@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduConnect - Register</title>
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/auth.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+  </head>
+  <body>
+    <div class="auth-page">
+      <div class="auth-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+        </svg>
+      </div>
+
+      <div class="auth-card">
+        <p class="auth-breadcrumb">
+          <a href="index.html">Home</a> <span>/ Register</span>
+        </p>
+        <h1>Register</h1>
+        <p class="auth-subtitle">Create your account to get started.</p>
+
+        <form>
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" placeholder="e.g. John Doe" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="e.g. john@example.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="e.g. johndoe" />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="password-wrapper">
+              <input type="password" id="password" placeholder="Min. 8 characters" />
+              <button type="button" class="password-toggle" onclick="togglePassword('password', this)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <div class="password-wrapper">
+              <input type="password" id="confirm-password" placeholder="Re-enter your password" />
+              <button type="button" class="password-toggle" onclick="togglePassword('confirm-password', this)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" class="auth-submit">Register</button>
+        </form>
+      </div>
+
+      <p class="auth-footer">
+        Already have an account? <a href="login.html">Login here!</a>
+      </p>
+      <p class="auth-copyright">&copy; 2024 EduConnect. All rights reserved.</p>
+    </div>
+
+    <script>
+      function togglePassword(id, btn) {
+        const input = document.getElementById(id);
+        const isPassword = input.type === "password";
+        input.type = isPassword ? "text" : "password";
+        btn.innerHTML = isPassword
+          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>'
+          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
+      }
+
+      document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const fullname = document.getElementById('fullname').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const confirmPassword = document.getElementById('confirm-password').value.trim();
+
+        if (!fullname || !email || !username || !password || !confirmPassword) {
+          showNotification('Please fill in all fields.', 'error');
+          return;
+        }
+
+        if (!email.includes('@') || !email.includes('.')) {
+          showNotification('Please enter a valid email address.', 'error');
+          return;
+        }
+
+        if (password.length < 8) {
+          showNotification('Password must be at least 8 characters.', 'error');
+          return;
+        }
+
+        if (password !== confirmPassword) {
+          showNotification('Passwords do not match.', 'error');
+          return;
+        }
+
+        showNotification('Account created successfully! Redirecting to login...', 'success');
+        setTimeout(() => { window.location.href = 'login.html'; }, 1500);
+      });
+
+      function showNotification(msg, type) {
+        const existing = document.querySelector('.notification');
+        if (existing) existing.remove();
+
+        const notification = document.createElement('div');
+        notification.className = 'notification';
+        notification.textContent = msg;
+        notification.style.cssText = 'position:fixed;top:24px;right:24px;padding:16px 24px;border-radius:12px;font-size:14px;font-weight:600;font-family:inherit;z-index:1000;box-shadow:0 10px 30px rgba(0,0,0,0.15);transition:opacity 0.3s;'
+          + (type === 'success' ? 'background:#10b981;color:white;' : 'background:#ef4444;color:white;');
+
+        document.body.appendChild(notification);
+        setTimeout(() => {
+          notification.style.opacity = '0';
+          setTimeout(() => notification.remove(), 300);
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
