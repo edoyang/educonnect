@@ -9,6 +9,17 @@
   gap: 40px;
 }
 
+.feature-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s;
+}
+
+.feature-card-link:hover {
+  transform: translateY(-4px);
+}
+
 .feature-card {
   text-align: center;
   padding: 20px;
